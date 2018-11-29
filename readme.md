@@ -9,7 +9,7 @@
 [size-img]: https://packagephobia.now.sh/badge?p=Name
 [size]: https://packagephobia.now.sh/result?p=Name
 
-「 desc 」
+「 人类的 Python 开发工作流程 」
 
 [中文](./readme.md) | [english](https://github.com/pypa/pipenv)
 
@@ -31,6 +31,13 @@
 
 <!-- doc-templite END generated -->
 
+- [x] readme
+- [ ] [./docs/advanced.zh.md](./docs/advanced.zh.md)
+- [ ] [./docs/basics.zh.md](./docs/basics.zh.md)
+- [ ] [./docs/diagnose.zh.md](./docs/diagnose.zh.md)
+- [ ] [./docs/index.zh.md](./docs/index.zh.md)
+- [ ] [./docs/install.zh.md](./docs/install.zh.md)
+
 ### 贡献
 
 欢迎 👏 勘误/校对/更新贡献 😊 [具体贡献请看](https://github.com/chinanf-boy/chinese-translate-list#贡献)
@@ -40,11 +47,6 @@
 [help me live , live need money 💰](https://github.com/chinanf-boy/live-need-money)
 
 ---
-
-### 目录
-
-<!-- START doctoc -->
-<!-- END doctoc -->
 
 # Pipenv:人类的 Python 开发工作流程
 
@@ -58,24 +60,36 @@
 
 ---
 
-**Pipenv**是一个旨在将最好的包装世界(捆绑商,作曲家,npm,货物,纱线等)带到 Python 世界的工具._在我们的世界里,Windows 是一流的公民._
+**Pipenv**是一个旨在将最好的包装世界(bundler, composer, npm, cargo, yarn 等)带到 Python 世界的工具._在我们的世界里,Windows 是一等公民._
 
-它会自动为您的项目创建和管理 virtualenv,以及添加/删除您的项目包`Pipfile`在安装/卸载软件包时.它也产生了至关重要的`Pipfile.lock`,用于生成确定性构建.
+它会自动为您的项目创建和管理 virtualenv，以及在安装/卸载软件包时，从`Pipfile`添加/删除您的项目包。它也会生成至关重要的`Pipfile.lock`，用于包库的构建确定性。
 
 ![image](http://media.kennethreitz.com.s3.amazonaws.com/pipenv.gif)
 
 Pipenv 试图解决的问题是多方面的:
 
-- 你不再需要使用`pip`和`virtualenv`分别.他们一起工作.
-- 管理`requirements.txt`文件[can be
-  problematic](https://www.kennethreitz.org/essays/a-better-pip-workflow),所以 Pipenv 使用即将到来的`Pipfile`和`Pipfile.lock`相反,这对于基本用例来说是优越的.
-- 散列随处可见.安全.自动暴露安全漏洞.
+- 你不再需要分开使用`pip`和`virtualenv(虚拟环境)`。他们一起工作啦.
+- 管理`requirements.txt`文件[可会是个问题](https://www.kennethreitz.org/essays/a-better-pip-workflow)，所以 Pipenv 使用即将到来的`Pipfile`和`Pipfile.lock`，这对于基本用例来说是优越的。
+- 哈希随处可见。安全。自动暴露安全漏洞.
 - 让您深入了解您的依赖关系图(例如`$ pipenv graph`).
-- 通过加载简化开发工作流程`.env`文件.
+- 通过加载`.env`文件简化开发工作流程。
 
-您可以在浏览器中快速使用 Pipenv:
+您可以在浏览器中，快速使用 Pipenv:
 
 [![Try in browser](https://cdn.rawgit.com/rootnroll/library/assets/try.svg)](https://rootnroll.com/d/pipenv/)
+
+### 目录
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [安装](#%E5%AE%89%E8%A3%85)
+- [☤ 用户的推荐(english)](#%E2%98%A4-%E7%94%A8%E6%88%B7%E7%9A%84%E6%8E%A8%E8%8D%90english)
+- [☤ 功能](#%E2%98%A4-%E5%8A%9F%E8%83%BD)
+- [☤ 用法](#%E2%98%A4-%E7%94%A8%E6%B3%95)
+- [☤ 文档](#%E2%98%A4-%E6%96%87%E6%A1%A3)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## 安装
 
@@ -91,55 +105,64 @@ $ brew install pipenv
 $ sudo dnf install pipenv
 ```
 
-否则,请参阅[documentation](https://docs.pipenv.org/install/)作为指示.
+否则,请参阅[官方文档](https://docs.pipenv.org/install/)作为指示.
 
 ✨🍰✨
 
-## ☤ 用户推荐
+## ☤ 用户的推荐(english)
 
-**Jannis Leidel**,前任维护人员---
+**Jannis Leidel**, former pip maintainer---
 
-:_皮彭夫是我一直想为 pip 建造的瓷器.它适合我的大脑,并且大多数取代了 virtualenvwrapper 和手动 pip 电话给我.用它._
+: _Pipenv is the porcelain I always wanted to build for pip. It fits
+my brain and mostly replaces virtualenvwrapper and manual pip calls
+for me. Use it._
 
-**大卫冈**---
+**David Gang**---
 
-:_这个包管理器非常棒.我第一次确切知道我安装的依赖项是什么以及传递依赖项是什么.结合安装是确定性的事实,使这个包管理器成为头等舱,就像货物一样_.
+: _This package manager is really awesome. For the first time I know
+exactly what my dependencies are which I installed and what the
+transitive dependencies are. Combined with the fact that installs
+are deterministic, makes this package manager first class, like
+cargo_.
 
-**贾斯汀迈尔斯福尔摩斯**---
+**Justin Myles Holmes**---
 
-:_Pipenv 最终是一个旨在吸引思维而不仅仅是文件系统的抽象._
+: _Pipenv is finally an abstraction meant to engage the mind instead
+of merely the filesystem._
 
-## ☤ 功能
+## ☤ 功能特性
 
-- 真正实现*确定性构建*,同时轻松指定*只有你想要的*.
-- 生成并检查锁定依赖项的文件哈希值.
-- 自动安装所需的 Pythons,如果`pyenv`是可用的.
-- 通过查找 a,以递归方式自动查找项目`Pipfile`.
-- 自动生成一个`Pipfile`,如果一个人不存在.
+- 真正实现*构建确定性*,同时轻松指定*仅是你想要的*.
+- 生成，并检查锁定依赖项的文件哈希值.
+- 自动安装所需的 Pythons，如果`pyenv`是可用的.
+- 通过查找项目目录，以递归方式自动查找`Pipfile`.
+- 自动生成一个`Pipfile`，如果其不存在.
 - 在标准位置自动创建 virtualenv.
-- 自动添加/删除包到`Pipfile`何时取消/安装.
-- 自动加载`.env`文件,如果存在的话.
+- 当卸载/安装包时，在`Pipfile`中自动添加/删除包。
+- 自动加载`.env`文件，如果存在的话.
 
-主要命令是`install`,`uninstall`,和`lock`,生成一个`Pipfile.lock`.这些都是为了取代`$ pip install`用法,以及手动 virtualenv 管理(激活 virtualenv,运行`$ pipenv shell`).
+主要命令是`install`，`uninstall`,和`lock`,生成一个`Pipfile.lock`。这些都是为了取代`$ pip install`用法,以及手动 virtualenv 管理(要激活 virtualenv,请运行`$ pipenv shell`).
 
 ### 基本概念
 
-- 当一个不存在时,将自动创建 virtualenv.
-- 没有参数传递给`install`,所有包裹`[packages]`指定将被安装.
+- 当一个虚拟环境不存在时,将自动创建 virtualenv.
+- 没有参数传递给`install`, 则所有`[packages]`指定包将被安装.
 - 要初始化 Python 3 虚拟环境,请运行`$ pipenv --three`.
 - 要初始化 Python 2 虚拟环境,请运行`$ pipenv --two`.
-- 否则,无论 virtualenv 默认为默认值.
+- 否则, virtualenv 默认为默认值.
 
 ### 其他命令
 
-- `shell`将生成 virtualenv 激活的 shell.
-- `run`将运行来自 virtualenv 的给定命令,并转发任何参数(例如`$ pipenv run python`).
-- `check`断言当前环境正在满足 PEP 508 要求.
-- `graph`将打印出所有已安装依赖项的漂亮图表.
+| 名      | 曰                                                                           |
+| ------- | ---------------------------------------------------------------------------- |
+| `shell` | 将派生一个(spawn) virtualenv 激活的 shell 进程。                             |
+| `run`   | 将运行来自 virtualenv 的给定命令，并转发任何参数(例如`$ pipenv run python`). |
+| `check` | 断言(asserts)当前环境正在满足 PEP 508 要求.                                  |
+| `graph` | 将打印出所有已安装依赖项的漂亮图表.                                          |
 
-### 壳牌完工
+### Shell tab 补全
 
-例如,用鱼,把它放在你的`~/.config/fish/completions/pipenv.fish`:
+例如,用 fish,把它放在你的`~/.config/fish/completions/pipenv.fish`:
 
 ```
 eval (pipenv --completion)
@@ -151,10 +174,10 @@ eval (pipenv --completion)
 eval "$(pipenv --completion)"
 ```
 
-Magic shell 完成现已启用!还有一个[fish
-plugin](https://github.com/fisherman/pipenv),它会自动激活你的子壳!
+魔法一样的 shell 补充现已启用! 还有一个[fish
+插件](https://github.com/fisherman/pipenv),它会自动激活你的 子 shell!
 
-鱼是最好的外壳.你应该使用它.
+Fish 是最好的 shell。你应该使用它.
 
 ## ☤ 用法
 
@@ -163,76 +186,76 @@ $ pipenv
 Usage: pipenv [OPTIONS] COMMAND [ARGS]...
 
 Options:
-  --where          Output project home information.
-  --venv           Output virtualenv information.
-  --py             Output Python interpreter information.
-  --envs           Output Environment Variable options.
-  --rm             Remove the virtualenv.
-  --bare           Minimal output.
-  --completion     Output completion (to be eval'd).
-  --man            Display manpage.
-  --three / --two  Use Python 3/2 when creating virtualenv.
-  --python TEXT    Specify which version of Python virtualenv should use.
-  --site-packages  Enable site-packages for the virtualenv.
-  --version        Show the version and exit.
-  -h, --help       Show this message and exit.
+  --where          输出项目路径信息。
+  --venv           输出 virtualenv 信息。
+  --py             输出 Python解释器 信息。
+  --envs           输出环境变量选项。
+  --rm             删除 virtualenv。
+  --bare           最小的输出。
+  --completion     输出tab补全（待评估）。
+  --man            显示 man 帮助页。
+  --three / --two  在创建virtualenv时，使用Python 3/2。
+  --python TEXT    指定virtualenv应该使用哪个版本的Python。
+  --site-packages  为 virtualenv 启用 site-packages。
+  --version        显示版本，并退出。
+  -h, --help       显示此消息，并退出。
 
 
-Usage Examples:
-   Create a new project using Python 3.7, specifically:
+使用示例:
+   > 创建一个使用 Python 3.7 的新项目, 如:
    $ pipenv --python 3.7
 
-   Remove project virtualenv (inferred from current directory):
+   > 删除 project virtualenv (注意是，从当前目录路径，推理来的):
    $ pipenv --rm
 
-   Install all dependencies for a project (including dev):
+   > 为项目，安装 所有 dependencies  (包括 dev):
    $ pipenv install --dev
 
-   Create a lockfile containing pre-releases:
+   > 创建一个 lockfile ，包括 pre-releases 版本:
    $ pipenv lock --pre
 
-   Show a graph of your installed dependencies:
+   > 展示一个，你已安装的依赖关系图:
    $ pipenv graph
 
-   Check your installed dependencies for security vulnerabilities:
+   > 为了你已安装的依赖，检测 安全漏洞:
    $ pipenv check
 
-   Install a local setup.py into your virtual environment/Pipfile:
+   > 安装一个本地 setup.py 到， 你的 虚拟环境/Pipfile:
    $ pipenv install -e .
 
-   Use a lower-level pip command:
+   > 运行一个 底层 pip 命令:
    $ pipenv run pip freeze
 
 Commands:
-  check      Checks for security vulnerabilities and against PEP 508 markers
-             provided in Pipfile.
-  clean      Uninstalls all packages not specified in Pipfile.lock.
-  graph      Displays currently–installed dependency graph information.
-  install    Installs provided packages and adds them to Pipfile, or (if no
-             packages are given), installs all packages from Pipfile.
-  lock       Generates Pipfile.lock.
-  open       View a given module in your editor.
-  run        Spawns a command installed into the virtualenv.
-  shell      Spawns a shell within the virtualenv.
-  sync       Installs all packages specified in Pipfile.lock.
-  uninstall  Un-installs a provided package and removes it from Pipfile.
+  check      - 检查安全漏洞，和PEP 508标记
+             - 由 Pipfile 提供由来。
+  clean      - 卸载 Pipfile.lock中，所有未指定的软件包。
+  graph      - 显示当前安装的依赖关系图信息。
+  install    - 安装提供的包，并将它们添加到Pipfile，或者（如果没有）
+             - 给出了包名参数，就从Pipfile安装所有包。
+  lock       - 生成 Pipfile.lock。
+  open       - 在编辑器中，查看给定模块。
+  run        - 运行一个安装在virtualenv中的命令。
+  shell      - 在virtualenv中生成一个shell进程。
+  sync       - 安装 Pipfile.lock 中指定的所有包。
+  uninstall  - 卸载输入的软件包，并将其从Pipfile中删除。
 ```
 
-找到项目:
+启用项目:
 
 ```
 $ pipenv --where
 /Users/kennethreitz/Library/Mobile Documents/com~apple~CloudDocs/repos/kr/pipenv/test
 ```
 
-找到 virtualenv:
+启用 virtualenv:
 
 ```
 $ pipenv --venv
 /Users/kennethreitz/.local/share/virtualenvs/test-Skyy4vre
 ```
 
-找到 Python 解释器:
+启用 Python 解释器:
 
 ```
 $ pipenv --py
@@ -254,21 +277,21 @@ To activate this project's virtualenv, run the following:
 $ pipenv shell
 ```
 
-从 git 安装:
+指定 git 安装包:
 
-您可以使用根据以下规则格式化的 URL 从 git 和其他版本控制系统安装 pipenv 包:
+您可以使用根据以下规则格式化的 URL ，从 git 和其他版本控制系统安装 pipenv 包:
 
 ```
 <vcs_type>+<scheme>://<location>/<user_or_organization>/<repository>@<branch_or_tag>#<package_name>
 ```
 
-唯一可选的部分是`@<branch_or_tag>`部分.通过 SSH 使用 git 时,您可以使用速记 vcs 和 scheme 别名`git+git@<location>:<user_or_organization>/<repository>@<branch_or_tag>#<package_name>`.请注意,这被翻译成`git+ssh://git@<location>`解析时.
+唯一可选的部分是`@<branch_or_tag>`部分。通过 SSH 使用 git 时,您可以使用短关键字 vcs 和 scheme 别名`git+git@<location>:<user_or_organization>/<repository>@<branch_or_tag>#<package_name>`。请注意,在解析时，这会转换成`git+ssh://git@<location>`.
 
-有效值`<vcs_type>`包括`git`,`bzr`,`svn`,和`hg`.有效值`<scheme>`包括`http,`,`https`,`ssh`,和`file`.在特定情况下,您还可以访问其他方案:`svn`可以结合使用`svn`作为一个计划,和`bzr`可以结合使用`sftp`和`lp`.
+`<vcs_type>`有效值包括`git`,`bzr`,`svn`,和`hg`。`<scheme>`有效值包括`http,`,`https`,`ssh`,和`file`。在特定情况下,您还可以访问其他方案(scheme)`svn`，可以与`svn`结合使用，还有`bzr`可以与`sftp`和`lp`结合使用。
 
-请注意它是**强力推荐**您可以使用在可编辑模式下安装任何版本控制的依赖项`pipenv install -e`,以确保每次执行时都可以使用存储库的最新副本执行依赖项解析,并且它包含所有已知的依赖项.
+请注意`pipenv install -e`是**强力推荐**，您可以在可编辑模式下，安装任何版本控制的依赖项,以确保每次执行时，都可以在依赖项解析过程，使用存储库的最新副本，和包含所有已知的依赖项。
 
-以下是安装位于的 git 存储库的示例用法`https://github.com/requests/requests.git`来自标签`v2.19.1`作为包名`requests`:
+以下是安装`requests`包，位于 git 存储库的示例用法`https://github.com/requests/requests.git`，其标签为`v2.19.1`:
 
 ```
 $ pipenv install -e git+https://github.com/requests/requests.git@v2.19#egg=requests
@@ -279,7 +302,7 @@ Adding -e git+https://github.com/requests/requests.git@v2.19.1#egg=requests to P
 [...]
 ```
 
-你可以阅读更多关于[pip's implementation of vcs support here](https://pip.pypa.io/en/stable/reference/pip_install/#vcs-support).
+你可以阅读更多关于[pip's 实现了 vcs 的支持](https://pip.pypa.io/en/stable/reference/pip_install/#vcs-support).
 
 安装 dev 依赖项:
 
@@ -344,4 +367,4 @@ $ ▯
 
 ## ☤ 文档
 
-文档驻留在[pipenv.org](http://pipenv.org/).
+文档驻守在[pipenv.org](http://pipenv.org/).
