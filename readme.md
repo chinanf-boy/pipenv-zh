@@ -1,13 +1,11 @@
-# pypa/pipenv [![explain]][source] [![translate-svg]][translate-list]
+# pypa/pipenv [![translate-svg]][translate-list]
 
-<!-- [![size-img]][size] -->
+<!-- [![explain]][source] -->
 
 [explain]: http://llever.com/explain.svg
 [source]: https://github.com/chinanf-boy/Source-Explain
 [translate-svg]: http://llever.com/translate.svg
 [translate-list]: https://github.com/chinanf-boy/chinese-translate-list
-[size-img]: https://packagephobia.now.sh/badge?p=Name
-[size]: https://packagephobia.now.sh/result?p=Name
 
 「 人类的 Python 开发工作流程 」
 
@@ -19,24 +17,26 @@
 
 <!-- doc-templite START generated -->
 <!-- repo = 'pypa/pipenv' -->
-<!-- commit = 'true' -->
-<!-- time = 'true' -->
+<!-- commit = '978d97764231b3690d5804d7e09e89ac572d73d7' -->
+<!-- time = '2018-11-28' -->
 
-| 翻译的原文 | 与日期  | 最新更新 | 更多                       |
-| ---------- | ------- | -------- | -------------------------- |
-| [commit]   | ⏰ true | ![last]  | [中文翻译][translate-list] |
+| 翻译的原文 | 与日期        | 最新更新 | 更多                       |
+| ---------- | ------------- | -------- | -------------------------- |
+| [commit]   | ⏰ 2018-11-28 | ![last]  | [中文翻译][translate-list] |
 
 [last]: https://img.shields.io/github/last-commit/pypa/pipenv.svg
-[commit]: https://github.com/pypa/pipenv/tree/true
+[commit]: https://github.com/pypa/pipenv/tree/978d97764231b3690d5804d7e09e89ac572d73d7
 
 <!-- doc-templite END generated -->
 
 - [x] readme
-- [ ] [./docs/advanced.zh.md](./docs/advanced.zh.md)
-- [ ] [./docs/basics.zh.md](./docs/basics.zh.md)
-- [ ] [./docs/diagnose.zh.md](./docs/diagnose.zh.md)
-- [ ] [./docs/index.zh.md](./docs/index.zh.md)
-- [ ] [./docs/install.zh.md](./docs/install.zh.md)
+- [ ] [索引页](./docs/index.zh.md)
+- [ ] [安装](./docs/install.zh.md)
+- [ ] [基础](./docs/basics.zh.md)
+- [ ] [高级](./docs/advanced.zh.md)
+- [ ] [常问的问题](./docs/diagnose.zh.md)
+
+> 官方文档的生成器`sphinx-build`有点烦，所以就算了，且 markdown 要转 rst 的工具不怎完美，懒得折腾了
 
 ### 贡献
 
