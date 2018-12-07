@@ -1,12 +1,33 @@
-# Pipenv 的基本用法{#basic}
+# Pipenv 的基本用法
 
 ![image](https://farm4.staticflickr.com/3931/33173826122_b7ee8f1a26_k_d.jpg)
 
 本文档介绍了 Pipenv 的一些基本功能.
 
+## 目录
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [☤Pipfile 和 Pipfile.lock 示例](#%E2%98%A4pipfile-%E5%92%8C-pipfilelock-%E7%A4%BA%E4%BE%8B)
+- [☤ 一般建议和版本控制](#%E2%98%A4-%E4%B8%80%E8%88%AC%E5%BB%BA%E8%AE%AE%E5%92%8C%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6)
+- [☤ 示例 Pipenv 工作流程](#%E2%98%A4-%E7%A4%BA%E4%BE%8B-pipenv-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B)
+- [☤ 示例 Pipenv 升级工作流](#%E2%98%A4-%E7%A4%BA%E4%BE%8B-pipenv-%E5%8D%87%E7%BA%A7%E5%B7%A5%E4%BD%9C%E6%B5%81)
+- [☤ 从 requirements.txt 导入](#%E2%98%A4-%E4%BB%8E-requirementstxt-%E5%AF%BC%E5%85%A5)
+- [☤ 指定包的版本](#%E2%98%A4-%E6%8C%87%E5%AE%9A%E5%8C%85%E7%9A%84%E7%89%88%E6%9C%AC)
+- [☤ 指定 Python 的版本](#%E2%98%A4-%E6%8C%87%E5%AE%9A-python-%E7%9A%84%E7%89%88%E6%9C%AC)
+- [☤ 可编辑的依赖关系(例如`-e .`)](#%E2%98%A4-%E5%8F%AF%E7%BC%96%E8%BE%91%E7%9A%84%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E4%BE%8B%E5%A6%82-e-)
+- [by Pipenv 的环境管理](#by-pipenv-%E7%9A%84%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86)
+- [☤ 关于 Shell 配置](#%E2%98%A4-%E5%85%B3%E4%BA%8E-shell-%E9%85%8D%E7%BD%AE)
+- [☤ 关于 VCS 依赖关系的注释](#%E2%98%A4-%E5%85%B3%E4%BA%8E-vcs-%E4%BE%9D%E8%B5%96%E5%85%B3%E7%B3%BB%E7%9A%84%E6%B3%A8%E9%87%8A)
+- [☤Pipfile.lock 安全功能](#%E2%98%A4pipfilelock-%E5%AE%89%E5%85%A8%E5%8A%9F%E8%83%BD)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## ☤Pipfile 和 Pipfile.lock 示例
 
-::: {#example_files}这是一个简单的例子`Pipfile`结果`Pipfile.lock`.:::
+:::
 
 ### 示例 Pipfile
 
@@ -149,7 +170,7 @@ $ python --version
 
 这将生成一个新的 shell 子进程,可以通过使用来停用它`exit`.
 
-## ☤ 示例 Pipenv 升级工作流{#initialization}
+## ☤ 示例 Pipenv 升级工作流
 
 - 找出上游的变化:`$ pipenv update --outdated`.
 -
@@ -170,7 +191,7 @@ Upgrade packages, two options:
 
 如果您的需求文件固定了版本号,您可能需要编辑新版本号`Pipfile`删除那些,并让`pipenv`跟踪钉扎.如果你想保留固定版本`Pipfile.lock`现在,跑`pipenv lock --keep-outdated`.确保[upgrade](#initialization)不久!
 
-## ☤ 指定包的版本{#specifying_versions}
+## ☤ 指定包的版本
 
 您可以使用指定包的版本[Semantic Versioning
 scheme](https://semver.org/)(即`major.minor.micro`).
@@ -275,11 +296,11 @@ $ cat Pipfile
 
 所有子依赖项都将添加到`Pipfile.lock`同样.子依赖是**不**加入了`Pipfile.lock`如果你离开了`-e`选择出来.:::
 
-## by Pipenv 的环境管理{#environment_management}
+## by Pipenv 的环境管理
 
 您将在管理 pipenv 环境时使用的三个主要命令是`$ pipenv install`,`$ pipenv uninstall`,和`$ pipenv lock`.
 
-### \\ \$ pipenv install {#pipenv_install}
+### \\ \$ pipenv install
 
 `$ pipenv install`用于将包安装到 pipenv 虚拟环境中并更新 Pipfile.
 
@@ -308,7 +329,7 @@ $ pipenv install [package names]
 > - `--ignore-pipfile`---忽略了`Pipfile`并从安装`Pipfile.lock`.
 > - `--skip-lock`---忽略了`Pipfile.lock`并从安装`Pipfile`.另外,不要写出来`Pipfile.lock`反映变化`Pipfile`.
 
-### \\ \$ pipenv uninstall {#pipenv_uninstall}
+### \\ \$ pipenv uninstall
 
 `$ pipenv uninstall`支持所有参数[pipenv
 install](#pipenv-install),以及两个额外的选择,`--all`和`--all-dev`.
@@ -316,7 +337,7 @@ install](#pipenv-install),以及两个额外的选择,`--all`和`--all-dev`.
 > - `--all`---此参数将清除虚拟环境中的所有文件,但保持 Pipfile 不变.
 > - `--all-dev`---此参数将从虚拟环境中删除所有开发包,并从 Pip 文件中删除它们.
 
-### \\ \$ pipenv lock {#pipenv_lock}
+### \\ \$ pipenv lock
 
 `$ pipenv lock`用来创建一个`Pipfile.lock`,宣布**所有**项目的依赖项(和子依赖项),它们的最新可用版本以及下载文件的当前哈希值.这确保了可重复性,最重要的是*确定性*,构建.
 

@@ -610,7 +610,7 @@ resolution at all, use the [PIP\_IGNORE\_INSTALLED]{.title-ref} setting:
 
     $ PIP_IGNORE_INSTALLED=1 pipenv install --dev
 
-☤ Pipfile vs setup.py {#pipfile-vs-setuppy}
+☤ Pipfile vs setup.py
 ---------------------
 
 There is a subtle but very important distinction to be made between

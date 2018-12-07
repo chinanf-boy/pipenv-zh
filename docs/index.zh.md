@@ -1,4 +1,4 @@
-# Pipenv:人类的Python开发工作流程
+# Pipenv:人类的 Python 开发工作流程
 
 [![image](https://img.shields.io/pypi/v/pipenv.svg)](https://pypi.python.org/pypi/pipenv)
 
@@ -8,107 +8,131 @@
 
 [![image](https://img.shields.io/badge/Say%20Thanks!-🦉-1EAEDB.svg)](https://saythanks.io/to/kennethreitz)
 
-* * *
+---
 
-**Pipenv**是一个旨在将最好的包装世界(捆绑商,作曲家,npm,货物,纱线等)带到Python世界的工具.*在我们的世界里,Windows是一流的公民.*
+**Pipenv**是一个旨在将最好的包装世界(bundler, composer, npm, cargo, yarn 等)带到 Python 世界的工具._在我们的世界里,Windows 是一等公民._
 
-它会自动为您的项目创建和管理virtualenv,以及添加/删除您的项目包`Pipfile`在安装/卸载软件包时.它也产生了至关重要的`Pipfile.lock`,用于生成确定性构建.
+它会自动为您的项目创建和管理 virtualenv，以及在安装/卸载软件包时，从`Pipfile`添加/删除您的项目包。它也会生成至关重要的`Pipfile.lock`，用于包库的构建确定性。
 
-Pipenv主要是为应用程序的用户和开发人员提供一种简单的方法来设置工作环境.用于区分库和应用程序以及使用`setup.py`vs`Pipfile`定义依赖关系,请参阅`pipfile-vs-setuppy`{.interpreted-text role ="ref"}.
+Pipenv 主要是为用户和开发者提供,
+应用程序使用简单的方法来设置工作环境服务。 为了
+库和应用程序之间，以及
+`setup.py`用法 vs `Pipfile`定义依赖关系，参见
+[☤ Pipfile vs setup.py](./advanced.zh.md#pipfile-vs-setuppy)。
 
 <iframe src="https://player.vimeo.com/video/233134524" width="700" height="460" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-Pipenv试图解决的问题是多方面的:
+Pipenv 试图解决的问题是多方面的:
 
--   你不再需要使用`pip`和`virtualenv`分别.他们一起工作.
--   管理`requirements.txt`文件[can be
-    problematic](https://www.kennethreitz.org/essays/a-better-pip-workflow),所以Pipenv使用`Pipfile`和`Pipfile.lock`将抽象依赖性声明与上次测试的组合分开.
--   散列随处可见.安全.自动暴露安全漏洞.
--   强烈建议使用最新版本的依赖项以最大限度地降低安全风险[arising from outdated
-    components](https://www.owasp.org/index.php/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities).
--   让您深入了解您的依赖关系图(例如`$ pipenv graph`).
--   通过加载简化开发工作流程`.env`文件.
+- 你不再需要分开使用`pip`和`virtualenv(虚拟环境)`。他们一起工作啦.
+- 管理`requirements.txt`文件[可会是个问题](https://www.kennethreitz.org/essays/a-better-pip-workflow)，所以 Pipenv 使用即将到来的`Pipfile`和`Pipfile.lock`，这对于基本用例来说是优越的。
+- 哈希随处可见。安全。自动暴露安全漏洞.
+- 让您深入了解您的依赖关系图(例如`$ pipenv graph`).
+- 通过加载`.env`文件简化开发工作流程。
 
-您可以在浏览器中快速使用Pipenv:
+您可以在浏览器中，快速使用 Pipenv:
 
 [![Try in browser](https://cdn.rawgit.com/rootnroll/library/assets/try.svg)](https://rootnroll.com/d/pipenv/)
 
-## 立即安装Pipenv!
+### 目录
 
-如果您使用的是MacOS,可以使用Homebrew轻松安装Pipenv:
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+  - [安装](#%E5%AE%89%E8%A3%85)
+  - [☤ 用户的推荐(english)](#%E2%98%A4-%E7%94%A8%E6%88%B7%E7%9A%84%E6%8E%A8%E8%8D%90english)
+  - [☤ 功能特性](#%E2%98%A4-%E5%8A%9F%E8%83%BD%E7%89%B9%E6%80%A7)
+  - [更多文档指南](#%E6%9B%B4%E5%A4%9A%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97)
+  - [贡献指南](#%E8%B4%A1%E7%8C%AE%E6%8C%87%E5%8D%97)
+  - [☤Pipenv 用法](#%E2%98%A4pipenv-%E7%94%A8%E6%B3%95)
+- [指数和表格](#%E6%8C%87%E6%95%B0%E5%92%8C%E8%A1%A8%E6%A0%BC)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## 安装
+
+如果您使用的是 MacOS,可以使用 Homebrew 轻松安装 Pipenv:
 
 ```
 $ brew install pipenv
 ```
 
-或者,如果你正在使用Fedora 28:
+或者,如果你正在使用 Fedora 28:
 
 ```
 $ sudo dnf install pipenv
 ```
 
-否则,请参阅`installing-pipenv`{.interpreted-text role ="ref"}章节说明.
+否则,请参阅[安装文档](./install.zh.md)作为指示.
 
 ✨🍰✨
 
-::: {.toctree maxdepth ="2"}安装changelog :::
+## ☤ 用户的推荐(english)
 
-## 用户推荐
+**Jannis Leidel**, former pip maintainer---
 
-**Jannis Leidel**,前任维护人员---
+: _Pipenv is the porcelain I always wanted to build for pip. It fits
+my brain and mostly replaces virtualenvwrapper and manual pip calls
+for me. Use it._
 
-:*皮彭夫是我一直想为pip建造的瓷器.它适合我的大脑,并且大多数取代了virtualenvwrapper和手动pip电话给我.用它.*
+**David Gang**---
 
-**大卫冈**---
+: _This package manager is really awesome. For the first time I know
+exactly what my dependencies are which I installed and what the
+transitive dependencies are. Combined with the fact that installs
+are deterministic, makes this package manager first class, like
+cargo_.
 
-:*这个包管理器非常棒.我第一次确切知道我安装的依赖项是什么以及传递依赖项是什么.结合安装是确定性的事实,使这个包管理器成为头等舱,就像货物一样*.
+**Justin Myles Holmes**---
 
-**贾斯汀迈尔斯福尔摩斯**---
+: _Pipenv is finally an abstraction meant to engage the mind instead
+of merely the filesystem._
 
-:*Pipenv最终是一个旨在吸引思维而不仅仅是文件系统的抽象.*
+## ☤ 功能特性
 
-## ☤Pipenv功能
+- 真正实现*构建确定性*,同时轻松指定*仅是你想要的*.
+- 生成，并检查锁定依赖项的文件哈希值.
+- 自动安装所需的 Pythons，如果`pyenv`是可用的.
+- 通过查找项目目录，以递归方式自动查找`Pipfile`.
+- 自动生成一个`Pipfile`，如果其不存在.
+- 在标准位置自动创建 virtualenv.
+- 当卸载/安装包时，在`Pipfile`中自动添加/删除包。
+- 自动加载`.env`文件，如果存在的话.
 
--   真正实现*确定性构建*,同时轻松指定*只有你想要的*.
--   生成并检查锁定依赖项的文件哈希值.
--   自动安装所需的Pythons,如果`pyenv`是可用的.
--   通过查找a,以递归方式自动查找项目`Pipfile`.
--   自动生成一个`Pipfile`,如果一个人不存在.
--   在标准位置自动创建virtualenv.
--   自动添加/删除包到`Pipfile`何时取消/安装.
--   自动加载`.env`文件,如果存在的话.
-
-主要命令是`install`,`uninstall`,和`lock`,生成一个`Pipfile.lock`.这些都是为了取代`$ pip install`用法,以及手动virtualenv管理(激活virtualenv,运行`$ pipenv shell`).
+主要命令是`install`，`uninstall`,和`lock`,生成一个`Pipfile.lock`。这些都是为了取代`$ pip install`用法,以及手动 virtualenv 管理(要激活 virtualenv,请运行`$ pipenv shell`).
 
 ### 基本概念
 
--   当一个不存在时,将自动创建virtualenv.
--   没有参数传递给`install`,所有包裹`[packages]`指定将被安装.
--   要初始化Python 3虚拟环境,请运行`$ pipenv --three`.
--   要初始化Python 2虚拟环境,请运行`$ pipenv --two`.
--   否则,无论virtualenv默认为默认值.
+- 当一个虚拟环境不存在时,将自动创建 virtualenv.
+- 没有参数传递给`install`, 则所有`[packages]`指定包将被安装.
+- 要初始化 Python 3 虚拟环境,请运行`$ pipenv --three`.
+- 要初始化 Python 2 虚拟环境,请运行`$ pipenv --two`.
+- 否则, virtualenv 默认为默认值.
 
 ### 其他命令
 
--   `graph`将显示已安装依赖项的依赖关系图.
--   `shell`将生成virtualenv激活的shell.可以通过使用来停用此shell`exit`.
--   `run`将运行来自virtualenv的给定命令,并转发任何参数(例如`$ pipenv run python`要么`$ pipenv run pip freeze`).
--   `check`检查安全漏洞并声明当前环境正在满足PEP 508要求.
+| 名      | 曰                                                                           |
+| ------- | ---------------------------------------------------------------------------- |
+| `shell` | 将派生一个(spawn) virtualenv 激活的 shell 进程。                             |
+| `run`   | 将运行来自 virtualenv 的给定命令，并转发任何参数(例如`$ pipenv run python`). |
+| `check` | 断言(asserts)当前环境正在满足 PEP 508 要求.                                  |
+| `graph` | 将打印出所有已安装依赖项的漂亮图表.                                          |
 
 ## 更多文档指南
 
-::: {.toctree maxdepth ="2"}基础知识高级诊断:::
+- [基础](./docs/basics.zh.md)
+- [高级](./docs/advanced.zh.md)
+- [常问的问题](./docs/diagnose.zh.md)
 
 ## 贡献指南
 
-::: {.tooctree maxdepth ="2"} dev / philosophy dev / contributions :::
+https://pipenv.readthedocs.io/en/latest/#contribution-guides
 
-## ☤Pipenv用法
+## ☤Pipenv 用法
 
-::: {.click prog ="pipenv"show-nested =""} pipenv:cli :::
+https://pipenv.readthedocs.io/en/latest/#pipenv-usage
 
 # 指数和表格
 
--   `genindex`{.interpreted-text role ="ref"}
--   `modindex`{.interpreted-text role ="ref"}
--   `search`{.interpreted-text role ="ref"}
+https://pipenv.readthedocs.io/en/latest/#indices-and-tables

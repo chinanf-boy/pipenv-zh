@@ -1,4 +1,4 @@
-# Pipenv和虚拟环境{#virtualenvironments-ref}
+# Pipenv和虚拟环境
 
 ![image](https://farm3.staticflickr.com/2943/33485660921_dfc0494739_k_d.jpg)
 
@@ -9,6 +9,20 @@
 ::: {.note} ::: {.admonition-title}注:::
 
 本指南是为Python 3编写的,但是,这些指令在Python 2.7上应该可以正常工作---如果你仍在使用它,出于某种原因.:::
+
+## 目录
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [☤确保你有Python和pip](#%E2%98%A4%E7%A1%AE%E4%BF%9D%E4%BD%A0%E6%9C%89python%E5%92%8Cpip)
+- [☤安装Pipenv](#%E2%98%A4%E5%AE%89%E8%A3%85pipenv)
+- [☤为项目安装包](#%E2%98%A4%E4%B8%BA%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85%E5%8C%85)
+- [☤使用已安装的软件包](#%E2%98%A4%E4%BD%BF%E7%94%A8%E5%B7%B2%E5%AE%89%E8%A3%85%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%8C%85)
+- [☤后续步骤](#%E2%98%A4%E5%90%8E%E7%BB%AD%E6%AD%A5%E9%AA%A4)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## ☤确保你有Python和pip
 

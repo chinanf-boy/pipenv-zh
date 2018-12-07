@@ -30,7 +30,7 @@
 <!-- doc-templite END generated -->
 
 - [x] readme
-- [ ] [索引页](./docs/index.zh.md)
+- [x] [索引页](./docs/index.zh.md)
 - [ ] [安装](./docs/install.zh.md)
 - [ ] [基础](./docs/basics.zh.md)
 - [ ] [高级](./docs/advanced.zh.md)
